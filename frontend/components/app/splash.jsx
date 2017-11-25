@@ -2,7 +2,12 @@ import React from 'react';
 
 const Splash = () => (
   <div>
-    SPLASH 
+    <nav>
+      <a>QUACK</a>
+    </nav>
+    <div>
+      Where Work Happens
+    </div>
   </div>
 );
 
