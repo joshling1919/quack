@@ -12,6 +12,14 @@
  *
  * Files organized based on this recommended structure: http://www.mattboldt.com/organizing-css-and-sass-rails/
  *
- *= require_tree .
- *= require main
+ *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import "base/normalize.scss";
+@import "base/colors.scss";
+@import "base/globals.scss";
+
+@import "components/*";
