@@ -27,3 +27,27 @@ nav {
     padding: 0 4vw;
   }
 }
+
+.splash-container {
+  display: grid;
+  grid-template-columns: 100%;  
+  padding: 12px 8vw 0 8vw;
+}
+
+.splash {
+  margin: .67em auto;
+  .splash-header {
+    font-size: calc(2.2rem + (41.6 * (100vw - 400px)/ 624));
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    color: $splash-title;
+    font-family: serif;
+  }
+
+  .splash-description {
+    color: $splash-gray;
+    line-height: 1.5;
+    font-size: calc(1.0625rem + (3 * (100vw - 400px)/ 624));
+    font-weight: 400;
+  }
+}
