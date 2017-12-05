@@ -10,22 +10,31 @@ nav {
     display: flex;
     margin: 0 auto;
     padding: 0 8vw;
+    justify-content: space-between;
+    align-items: center;
 
     .logo {
-      display: flex;
       align-items: center;
+      display: flex;
       font-size: 24px;
-
+      color: $link-blue;
       .fa {
         margin-right: 4px;
       }
     }
-}
 
-@media screen and (min-width: 48rem) {
-  .nav-content-container {
-    padding: 0 4vw;
-  }
+    .demo {
+      padding: 10px;
+      color: $splash-demo-gray;
+      box-shadow: inset 0 0 0 1px #323648;
+      width: 125px;
+    }
+
+    .demo:hover {
+      color: $splash-blue;
+      box-shadow: inset 0 0 0 1px #9ba0d3;
+    }
+
 }
 
 .splash-container {
@@ -36,8 +45,9 @@ nav {
 
 .splash {
   margin: .67em auto;
+  color: $splash-gray;
   .splash-header {
-    font-size: calc(2.2rem + (41.6 * (100vw - 400px)/ 624));
+    font-size: calc(2.2rem + (41.6 * (100vw - 400px)/ 670));
     line-height: 1.05;
     margin-bottom: 2rem;
     color: $splash-title;
@@ -45,9 +55,64 @@ nav {
   }
 
   .splash-description {
-    color: $splash-gray;
-    line-height: 1.5;
-    font-size: calc(1.0625rem + (3 * (100vw - 400px)/ 624));
+    line-height: 1.7;
+    font-size: calc(1.0625rem + (3 * (100vw - 400px)/ 670));
     font-weight: 400;
+    margin-bottom: 3rem;
+  }
+
+  .splash-auth {
+    button {
+      background-color: $splash-blue;
+      color: white;
+      padding: 19px 40px 20px;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: $splash-hover-blue;
+    }
+
+    a {
+      color: $link-blue;
+      border-bottom: 1px solid $link-blue;
+    }
+  }
+
+  .splash-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+
+    img {
+      align-self: center;
+      height: 300px;
+    }
+  }
+}
+
+
+@media screen and (min-width: 48rem) {
+  .nav-content-container {
+    padding: 0 4vw;
+  }
+
+  .splash {
+    display: grid;
+    grid-template-columns: 40% 50%;
+    grid-column-gap: 10%;
+    grid-template-areas: "pic text";
+  }
+  
+  .splash-image-container {
+    grid-area: pic;
+  }
+
+  .splash-text {
+    grid-area: text;
+  }
+
+  .splash .splash-auth button {
+    width: 170px;
   }
 }
