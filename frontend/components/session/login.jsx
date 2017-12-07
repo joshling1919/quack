@@ -1,8 +1,10 @@
 import React from 'react';
 
 const LogIn = () => (
-  <div>
-    LOG IN
+  <div className="auth-background">
+    <div className="auth-container">
+      Log In
+    </div>
   </div>
 );
 

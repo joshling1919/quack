@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SignUp = () => (
-  <div>
+  <div className="auth-background">
     SIGN UP
   </div>
 );

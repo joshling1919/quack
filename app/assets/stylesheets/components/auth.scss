@@ -1,0 +1,16 @@
+.auth-background {
+  background-color: $auth-background;
+  height: 100vh;
+  padding: 40px;
+}
+
+.auth-container {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 1px 0 rgba(0,0,0,.25);
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+  height: 60%;
+  width: 90%;
+  margin: 0 auto;
+}
