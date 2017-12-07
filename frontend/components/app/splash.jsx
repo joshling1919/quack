@@ -1,7 +1,8 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import Home from './home';
 import SignUp from '../session/signup';
+import LogIn from '../session/login';
 
 const Splash = () => {
   return(
@@ -10,7 +11,7 @@ const Splash = () => {
         <div className="nav-content-container">        
           <div className="logo">
             <i className="fa fa-slack" aria-hidden="true"/>
-            <a>quack</a>
+            <Link to="/">quack</Link>
           </div>
           <button className="demo">Demo</button>
         </div>
@@ -18,6 +19,7 @@ const Splash = () => {
 
       <Route exact path="/" component={Home} />
       <Route path="/signup" component={SignUp} />
+      <Route path="/login" component={LogIn} />
 
     </div>
   )

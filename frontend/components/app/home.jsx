@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => (
   <div className="splash-container">
@@ -12,8 +13,8 @@ const Home = () => (
               has you covered.
             </p>
         <div className="splash-auth">
-          <button>Get Started</button>
-          <p>Already using Quack? <a>Sign In.</a></p>
+          <Link to='/signup' className="button">Get Started</Link>
+          <p>Already using Quack? <Link to='/login'>Sign In.</Link></p>
         </div>
       </div>
       <div className="splash-image-container">
