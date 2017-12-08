@@ -3,9 +3,14 @@
 html {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
-a.button {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+button, a.button {
   border-radius: 4px;
   display: inline-block;
   border: none;
@@ -17,7 +22,7 @@ button:hover, a:hover {
   cursor: pointer;
 }
 
-button:focus {
+button:focus, input:focus {
   outline: none;
 }
 
