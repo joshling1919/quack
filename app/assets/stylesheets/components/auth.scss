@@ -22,7 +22,8 @@
 
 .auth-form {
   text-align: left;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
   p {
     margin-bottom: 16px;
   }
@@ -48,7 +49,12 @@
 
 @media only screen and (min-width: 767px){
   .auth-container {
-    width: 66%;
+    width: 585px;
     padding: 32px;
+  }
+  
+  .auth-form {
+    width: 375px;
+    margin: 0 auto;
   }
 }
