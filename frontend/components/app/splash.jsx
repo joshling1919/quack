@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import Home from './home';
-import SignUp from '../session/signup';
+import SignUpContainer from '../session/signup_container';
 import LogIn from '../session/login';
 
 const Splash = () => {
@@ -18,7 +18,7 @@ const Splash = () => {
       </nav>
 
       <Route exact path="/" component={Home} />
-      <Route path="/signup" component={SignUp} />
+      <Route path="/signup" component={SignUpContainer} />
       <Route path="/login" component={LogIn} />
 
     </div>

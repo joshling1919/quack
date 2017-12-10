@@ -10,7 +10,7 @@ html {
   box-sizing: inherit;
 }
 
-button, a.button {
+button, a.button, input[type="submit"] {
   border-radius: 4px;
   display: inline-block;
   border: none;
@@ -18,7 +18,7 @@ button, a.button {
   transition: all 420ms cubic-bezier(.165,.84,.44,1);
 }
 
-button:hover, a:hover {
+button:hover, a:hover, input[type="submit"] {
   cursor: pointer;
 }
 

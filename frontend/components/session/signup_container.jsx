@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
+import { signup } from '../../actions/session_actions';
+
 class SignUp extends React.Component {
 
   constructor(props) {
@@ -23,7 +27,7 @@ class SignUp extends React.Component {
   submit(e) {
     e.preventDefault();
     const user = this.state;
-    // send in all data 
+
   }
 
   render() {
@@ -31,7 +35,7 @@ class SignUp extends React.Component {
       <div className = "auth-background" >
         <div className="auth-container">
           <h1>Sign up</h1>
-          <form className="auth-form">
+          <form className="auth-form" onSubmit={this.submit}>
             <p>
               Enter your
           <strong> email address</strong>,
@@ -68,7 +72,7 @@ class SignUp extends React.Component {
               size={40}
               placeholder="password"
             />
-            <button>Create Account</button>
+            <input type="submit" value="Create Account" />
           </form>
         </div>
       </div>

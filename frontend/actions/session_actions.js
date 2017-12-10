@@ -14,12 +14,12 @@ export const receiveErrors = errors => ({
 });
 
 export function signup(user) {
-  return function(dispatch) {
+  return function (dispatch) {
     return APIUtil.signup(user).then(
-      function(user) {
+      function (user) {
         dispatch(receiveCurrentUser(user))
       },
-      function(err) {
+      function (err) {
         dispatch(receiveErrors(err.responseJSON))
       }
     );
