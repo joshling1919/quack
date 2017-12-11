@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-
 import { signup } from '../../actions/session_actions';
+
 
 class SignUp extends React.Component {
 
@@ -20,19 +20,19 @@ class SignUp extends React.Component {
 
   update(field) {
     return e => this.setState({
-      [field]: e.target 
+      [field]: e.target.value,
     });
   }
 
   submit(e) {
     e.preventDefault();
     const user = this.state;
-
+    this.props.signupUser({ user });
   }
 
   render() {
-    return(
-      <div className = "auth-background" >
+    return (
+      <div className="auth-background" >
         <div className="auth-container">
           <h1>Sign up</h1>
           <form className="auth-form" onSubmit={this.submit}>
@@ -78,6 +78,12 @@ class SignUp extends React.Component {
       </div>
     );
   };
-} 
+}; 
 
-export default SignUp;
+const mapDispatchToProps = (dispatch) => ({
+  signupUser: function (user) {
+    return dispatch(signup(user));
+  }
+});
+
+export default connect(null, mapDispatchToProps)(SignUp);

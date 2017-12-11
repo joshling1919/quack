@@ -18,7 +18,7 @@ const LogIn = () => (
           size={40}
           placeholder="password"
         />
-        <button>Sign In</button>
+        <input type="submit" value="Sign In" />
       </form>
     </div>
   </div>
