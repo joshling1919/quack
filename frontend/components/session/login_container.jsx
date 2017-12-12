@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { login } from '../../actions/session_actions';
+
 class LogIn extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +24,8 @@ class LogIn extends React.Component {
 
   submit(e) {
     e.preventDefault();
+    const user = this.state;
+    this.props.login({ user });
   }
 
   render() {
@@ -52,5 +57,8 @@ class LogIn extends React.Component {
   }
 };
 
+const mapDispatchToProps = dispatch => ({
+  login: user => dispatch(login(user)),
+});
 
-export default LogIn;
+export default connect(null, mapDispatchToProps)(LogIn);
