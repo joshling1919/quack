@@ -28,3 +28,11 @@ export const login = user => dispatch => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
+
+export const fetchCurrentUser = () => dispatch => (
+  APIUtil.fetchCurrentUser().then(user => (
+    dispatch(receiveCurrentUser(user))
+  ), err => (
+    dispatch(recceiveErrors(err.responseJSON))
+  ))
+);
