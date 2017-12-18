@@ -13,8 +13,8 @@ const Home = () => (
               has you covered.
             </p>
         <div className="splash-auth">
-          <Link to='/signup' className="button">Get Started</Link>
-          <p>Already using Quack? <Link to='/login'>Sign In.</Link></p>
+          <Link to='/welcome/signup' className="button">Get Started</Link>
+          <p>Already using Quack? <Link to='/welcome/login'>Sign In.</Link></p>
         </div>
       </div>
       <div className="splash-image-container">

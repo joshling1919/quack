@@ -1,12 +1,12 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Splash from './splash';
 import Messages from '../messages/messages';
 import NoMatch from './no_match';
 import { fetchCurrentUser } from '../../actions/session_actions';
-import { AuthRoute } from '../../util/route_utils';
+import { ProtectedRoute } from '../../util/route_utils';
 
 class App extends React.Component {
   componentDidMount() {
@@ -14,14 +14,19 @@ class App extends React.Component {
   }
 
   render() {
+    const { loggedIn } = this.props;
     return(
       <div>
         <Switch>
-          <AuthRoute 
-            path="/" 
-            userExists={Messages}
-            noUser={Splash}
-          /> 
+          <ProtectedRoute 
+            exact path="/" 
+            component={Messages} 
+            loggedIn={loggedIn} 
+          />
+          <Route 
+            path="/welcome" 
+            render={() => (<Splash loggedIn={loggedIn} />)} 
+          />
           <Route component={NoMatch} />
         </Switch>
       </div>
@@ -29,8 +34,12 @@ class App extends React.Component {
   }
 } 
 
+const mapStateToProps = state => ({
+  loggedIn: Boolean(state.session.currentUser),
+})
+
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: () => dispatch(fetchCurrentUser()),
 })
 
-export default connect(null, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
