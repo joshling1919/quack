@@ -1,28 +1,35 @@
 // Any styles that affect the entire app should go in this file
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-button, a.button, input[type="submit"] {
+button,
+a.button,
+input[type="submit"] {
   border-radius: 4px;
   display: inline-block;
   border: none;
   background: 0 0;
-  transition: all 420ms cubic-bezier(.165,.84,.44,1);
+  transition: all 420ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-button:hover, a:hover, input[type="submit"] {
+button:hover,
+a:hover,
+input[type="submit"] {
   cursor: pointer;
 }
 
-button:focus, input:focus {
+button:focus,
+input:focus {
   outline: none;
 }
 

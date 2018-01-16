@@ -17,3 +17,9 @@ export const fetchCurrentUser = () =>
     method: 'GET',
     url: '/api/fetch-current-user',
   });
+
+export const logout = () =>
+  $.ajax({
+    method: 'DELETE',
+    url: '/api/session',
+  });

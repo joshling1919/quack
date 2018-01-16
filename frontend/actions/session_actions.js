@@ -30,3 +30,5 @@ export const fetchCurrentUser = () => dispatch =>
     user => dispatch(receiveCurrentUser(user)),
     err => dispatch(receiveErrors(err.responseJSON)),
   );
+
+export const logout = () => () => APIUtil.logout();

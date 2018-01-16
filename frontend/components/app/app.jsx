@@ -15,31 +15,24 @@ class App extends React.Component {
 
   render() {
     const { loggedIn } = this.props;
-    return(
+    return (
       <div>
         <Switch>
-          <ProtectedRoute 
-            exact path="/" 
-            component={Messages} 
-            loggedIn={loggedIn} 
-          />
-          <Route 
-            path="/welcome" 
-            render={() => (<Splash loggedIn={loggedIn} />)} 
-          />
+          <ProtectedRoute exact path="/" component={Messages} loggedIn={loggedIn} />
+          <Route path="/welcome" render={() => <Splash loggedIn={loggedIn} />} />
           <Route component={NoMatch} />
         </Switch>
       </div>
     );
   }
-} 
+}
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchCurrentUser: () => dispatch(fetchCurrentUser()),
-})
+});
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
