@@ -14,7 +14,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { loggedIn } = this.props;
+    const { loggedIn, isFirstRender } = this.props;
+    if (isFirstRender) {
+      return null;
+    }
     return (
       <div>
         <Switch>
@@ -27,8 +30,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser),
+const mapStateToProps = ({ session }) => ({
+  loggedIn: Boolean(session.currentUser),
+  isFirstRender: session.isFirstRender,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,4 +1,5 @@
 // Any styles that affect the entire app should go in this file
+@import "loaders.css/src/animations/ball-pulse.scss";
 
 html {
   font-family: "Roboto", sans-serif;
@@ -35,4 +36,17 @@ input:focus {
 
 a {
   text-decoration: none;
+}
+
+.loader-container {
+  width: 200px;
+  margin: 15% auto;
+  text-align: center;
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
 }
