@@ -1,0 +1,24 @@
+.left-nav {
+  background-color: $purple;
+  height: 100vh;
+  width: 260px;
+}
+
+.nav-dropdown {
+  h3 {
+    margin: 0;
+  }
+  .show-true {
+    position: absolute;
+    display: block;
+  }
+
+  .show-false {
+    display: none;
+  }
+}
+
+.nav-dropdown:hover {
+  cursor: pointer;
+  background-color: $dark-purple;
+}

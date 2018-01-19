@@ -3,4 +3,7 @@ module.exports = {
   globals: {
     $: true,
   },
+  rules: {
+    'react/prefer-stateless-function': false,
+  },
 };
