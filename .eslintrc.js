@@ -6,4 +6,7 @@ module.exports = {
   rules: {
     'react/prefer-stateless-function': false,
   },
+  env: {
+    browser: true,
+  },
 };

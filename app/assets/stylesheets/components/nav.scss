@@ -1,16 +1,42 @@
 .left-nav {
   background-color: $purple;
   height: 100vh;
-  width: 260px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  color: white;
 }
 
 .nav-dropdown {
+  padding: 10px 15px;
   h3 {
-    margin: 0;
+    margin: 5px 0;
   }
   .show-true {
     position: absolute;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
     display: block;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    left: 10px;
+    transition: none;
+    transition-timing-function: unset;
+    padding: 15px 0;
+    button {
+      background-color: white;
+      color: $off-black;
+      margin: 0 15px;
+      padding: 8px 16px 8px 8px;
+      text-align: left;
+    }
+
+    button:hover {
+      background-color: $menu-hover-blue;
+      color: white;
+    }
   }
 
   .show-false {

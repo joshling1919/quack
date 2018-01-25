@@ -12,7 +12,20 @@ class NavDropdown extends React.Component {
     };
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
+
+  componentDidMount() {
+    const body = document.querySelector('body');
+
+    body.addEventListener('click', this.closeDropdown);
+  }
+
+  componentWillUnmount() {
+    const body = document.querySelector('body');
+    body.removeEventListener('click', this.closeDropdown);
+  }
+
   dropdown() {
     return (
       <div className={`show-${this.state.dropdownClass}`}>
@@ -24,14 +37,22 @@ class NavDropdown extends React.Component {
     );
   }
 
-  toggleDropdown() {
-    this.setState({ dropdownClass: !this.state.dropdownClass });
+  toggleDropdown(e) {
+    if (e.target.closest('div').className !== 'show-true') {
+      this.setState({ dropdownClass: !this.state.dropdownClass });
+    }
+  }
+
+  closeDropdown(e) {
+    if (this.state.dropdownClass && e.target.closest('div').className !== 'show-true') {
+      this.setState({ dropdownClass: false });
+    }
   }
 
   render() {
     const { userFullname } = this.props;
     return (
-      <div className="nav-dropdown" onClick={this.toggleDropdown}>
+      <div className="nav-dropdown" onClick={this.toggleDropdown} role="menu" tabIndex="0">
         <h3>Quack</h3>
         <span>{userFullname}</span>
         {this.dropdown()}
