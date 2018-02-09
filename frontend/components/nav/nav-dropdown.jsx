@@ -44,7 +44,11 @@ class NavDropdown extends React.Component {
   }
 
   closeDropdown(e) {
-    if (this.state.dropdownClass && e.target.closest('div').className !== 'show-true') {
+    if (
+      this.state.dropdownClass &&
+      e.target.closest('div').className !== 'show-true' &&
+      e.target.closest('div').className !== 'nav-dropdown'
+    ) {
       this.setState({ dropdownClass: false });
     }
   }
